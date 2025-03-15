@@ -42,6 +42,7 @@ say <command>
 ### Display Name
 ```sh
 say name
+```
 
 
 ### Display About Section
