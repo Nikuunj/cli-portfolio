@@ -38,6 +38,13 @@
             "description": ["Real-Time Communication: Utilized Socket.io for seamless real-time messaging, enabling instant message delivery and chat room management.",
             "Responsive and Scalable UI: Developed with React.js and styled with Tailwind CSS, ensuring a mobile-first, user-friendly, and scalable interface."],
             "link": "https://github.com/Nikuunj/meet"
+        },
+        {
+            
+            "name": "Cli_profile",
+            "tech": "NodeJs, TypeScript",
+            "description": ["A simple command-line tool to display profile details such as name, about section, and projects."],
+            "link": "https://github.com/Nikuunj/cli-portfolio"
         }
     ]
 }
