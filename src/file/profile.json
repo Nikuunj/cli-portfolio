@@ -1,0 +1,43 @@
+{
+    "name" : "Nikunj Makwana",
+    "about" : "I am a developer based in Gujarat, India, currently pursuing my undergraduate degree in Computer Science. My passion lies in honing my coding skills and creating websites. I specialize in developing WebApps and websites, constructing APIs. I am dedicated to self-improvement, persistently working independently to enhance and refine my skills.",
+    "link" : {
+        "linkdin": "https://www.linkedin.com/in/makwana-nikunj/",
+        "git": "https://github.com/Nikuunj",
+        "x" : "https://x.com/nikunj__makwana",
+        "vercel": "https://nikunj-portfolio.vercel.app/"
+    },
+    "project": [
+        {            
+            "name": "Run_it",
+            "tech": "Reactjs, NodeJs, Expressjs, VM",
+            "description": ["Developed a web-based code execution platform using React, Tailwind CSS, and Monaco Editor for real-time code execution and diagnostics.",
+            "Implemented responsive design with draggable and resizable panels to enhance user experience across devices."],
+            "link": "https://run-it.vercel.app/"
+        },
+        {
+            
+            "name": "Cloth_Store",
+            "tech": "NodeJs, Expressjs, TypeScript, React",
+            "description": ["Developed a responsive e-commerce web application using React, Tailwind CSS, Vite, Express, and TypeScript to ensure seamless cross-device functionality.",
+            "Integrated backend APIs for real-time product management, improving navigation and enhancing user interactions."],
+            "link": "https://online-market-frontend.vercel.app/"
+        },
+        {
+            
+            "name": "Make_an_Order",
+            "tech": "Reactjs, Expressjs, Threejs, Tailwindcss",
+            "description": ["Effortless Ordering: Utilize React.js for frontend, Express.js for backend, and Tailwind CSS for smooth navigation and ordering.", 
+            "Immersive 3D: Enhance product visualization with Three.js for an engaging shopping experience."],
+            "link": "https://github.com/Nikuunj/Make_An_Order"
+        },
+        {
+            
+            "name": "Chat_Application",
+            "tech": "Socket.io, Reactjs, Tailwindcss",
+            "description": ["Real-Time Communication: Utilized Socket.io for seamless real-time messaging, enabling instant message delivery and chat room management.",
+            "Responsive and Scalable UI: Developed with React.js and styled with Tailwind CSS, ensuring a mobile-first, user-friendly, and scalable interface."],
+            "link": "https://github.com/Nikuunj/meet"
+        }
+    ]
+}
