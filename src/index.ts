@@ -1,8 +1,6 @@
 import * as fs from 'fs';
 import { Command } from 'commander';
-import { JsTyping } from 'typescript';
 import { log } from 'console';
-import { json } from 'stream/consumers';
 
 const program = new Command();
 
@@ -49,31 +47,40 @@ program.command('connect')
         });
     });
 
-program.command('project') 
-    .description('Diplay my project Names')
-    .action((proejct_name: string | null) => {
-        const data = fs.readFile('src/file/profile.json', "utf-8", (err: any, data: any) => {
-            if(err) {
-                log(err) 
+    program.command('project')
+    .description('Display my project names')
+    .argument('[project_name]', 'Name of the project to view details') // ✅ Correctly define argument
+    .action((project_name: string | undefined) => {
+  
+      fs.readFile('src/file/profile.json', 'utf-8', (err, data) => {
+        if (err) {
+          log('Error reading file:', err);
+        } else {
+          try {
+            const jsonData = JSON.parse(data);
+            const projects: { name: string; tech: string; description: string; link: string }[] = jsonData.project;
+  
+            if (project_name) {
+              const selectedProject = projects.find(pr => pr.name.toLowerCase() === project_name.toLowerCase());
+  
+              if (selectedProject) {
+                log("\n📌 Project Name: " + selectedProject.name);
+                log("🛠 Tech Stack: " + selectedProject.tech);
+                log("🔗 Link: " + selectedProject.link);
+                log("📜 Description: " + selectedProject.description);
+              } else {
+                log(`❌ Project "${project_name}" not found.`);
+              }
             } else {
-                const jsonData = JSON.parse(data);
-                const project:{name: string, tech: string, description: string, link: string}[] = jsonData.project;
-
-                if(proejct_name) {
-                    const selectedProject = project.find(pr => pr.name === proejct_name);
-                    log("Project Name: " + selectedProject?.name);
-                    log("Project Tech-stack: " + selectedProject?.tech);
-                    log("Project Link: " + selectedProject?.link)
-                    log("Project Description: " + selectedProject?.description);
-                } else {
-                    project.forEach(pr => {
-                        log(pr.name);
-                    })
-                    log('FOR MORE DESCRIPTION ABOUT PROJECT TYPE `say project <project name>`')                    
-                }
-
+              log("\n📂 Available Projects:");
+              projects.forEach(pr => log(`  - ${pr.name}`));
+              log('\n🔍 For more details, use: `cmd-profile project <project_name>`');
             }
-        });
+          } catch (parseError) {
+            log('Error parsing JSON:', parseError);
+          }
+        }
+      });
     });
 
 program.parse();
